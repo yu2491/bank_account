@@ -20,7 +20,13 @@ describe BankAccount do
 
   describe "#deposit" do
     it "can respond to deposit" do
-      expect(subject).to respond_to(:deposit)
+      expect(subject).to respond_to(:deposit).with(1).argument
+    end
+
+    it "should update balance when deposit is called" do
+      account = BankAccount.new
+      account.deposit(10)
+      expect(account.balance).to eq(10)
     end
   end
 end
