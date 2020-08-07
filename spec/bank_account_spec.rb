@@ -29,4 +29,10 @@ describe BankAccount do
       expect(account.balance).to eq(10)
     end
   end
+
+  describe "#withdraw" do
+    it "can respond to deposit" do
+      expect(subject).to respond_to(:withdraw).with(1).argument
+    end
+  end
 end
